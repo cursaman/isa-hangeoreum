@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이사한걸음 | 새로운 시작을 함께</title>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;color:#24352d;background:#faf9f4;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  button,input,select,textarea{font:inherit}
+  .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+  header{background:#faf9f4;position:sticky;top:0;z-index:5;border-bottom:1px solid #e7e9df}
+  .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .logo{font-size:23px;font-weight:900;letter-spacing:-1.5px}
+  .logo span{color:#e98d4b}
+  nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:700}
+  .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;background:#315c49;color:white;font-weight:700;padding:13px 22px;cursor:pointer}
+  .hero{background:#edf2e8;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;padding:78px 0 85px}
+  .eyebrow{font-weight:800;letter-spacing:.12em;font-size:12px;color:#64836d}
+  h1{font-size:clamp(39px,5vw,65px);line-height:1.2;letter-spacing:-.065em;margin:18px 0 22px}
+  h1 em{font-style:normal;color:#d77d3b}
+  .hero p{font-size:17px;color:#617166;margin:0 0 29px;word-break:keep-all}
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn.light{background:white;color:#315c49;border:1px solid #cfdcd1}
+  .scene{height:390px;border-radius:180px 180px 22px 22px;background:#d4e2d0;position:relative;overflow:hidden}
+  .sun{position:absolute;width:85px;height:85px;border-radius:50%;background:#f8d99b;top:50px;right:75px}
+  .hill{position:absolute;bottom:-65px;left:-10%;width:120%;height:180px;border-radius:50%;background:#b4cbb0}
+  .house{position:absolute;bottom:72px;left:13%;width:135px;height:125px;background:#fcf8e9;border-radius:3px}
+  .house:before{content:"";position:absolute;top:-54px;left:-14px;border-left:82px solid transparent;border-right:82px solid transparent;border-bottom:58px solid #d79066}
+  .door{position:absolute;bottom:0;left:49px;width:34px;height:59px;background:#a5bba0;border-radius:18px 18px 0 0}
+  .window{position:absolute;top:30px;left:16px;width:30px;height:30px;background:#d4e7e1;border:4px solid white}
+  .truck{position:absolute;bottom:70px;right:11%;width:190px;height:92px;background:#f9f6e9;border-radius:6px 8px 8px 6px;box-shadow:0 7px 0 #8aa88a}
+  .truck:before{content:"";position:absolute;right:-42px;bottom:0;width:50px;height:65px;background:#f0b775;border-radius:20px 8px 4px 0}
+  .truck:after{content:"이사한걸음";position:absolute;top:27px;left:20px;color:#477258;font-size:18px;font-weight:900;letter-spacing:-1px}
+  .wheel{position:absolute;bottom:-15px;width:32px;height:32px;border:7px solid #435b50;background:#f2f0e3;border-radius:50%}
+  .wheel.one{left:25px}.wheel.two{right:-25px}
+  .section{padding:90px 0}
+  .section-head{text-align:center;margin-bottom:42px}
+  .section-head h2{font-size:36px;line-height:1.25;letter-spacing:-.05em;margin:12px 0}
+  .section-head p{margin:0;color:#78847a}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:#fff;border:1px solid #ebeee6;border-radius:16px;padding:32px;min-height:230px}
+  .icon{width:54px;height:54px;border-radius:16px;background:#eef4eb;display:grid;place-items:center;font-size:27px}
+  .card h3{margin:22px 0 8px;font-size:20px;letter-spacing:-.04em}
+  .card p{margin:0;color:#768278;font-size:15px;word-break:keep-all}
+  .care{background:#315c49;color:#fff}
+  .care-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}
+  .care h2{font-size:38px;line-height:1.3;letter-spacing:-.05em;margin:14px 0}
+  .care p{color:#cbdcd0;word-break:keep-all}
+  .care-list{display:grid;gap:12px}
+  .care-item{border:1px solid #668875;border-radius:12px;padding:18px 22px;display:flex;gap:18px;align-items:center}
+  .num{color:#f2c58c;font-weight:800;font-size:14px}
+  .care-item strong{display:block}.care-item small{color:#c5d8c9}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .step{border-top:2px solid #b6cdb7;padding:20px 5px}
+  .step b{font-size:13px;color:#d07c40}
+  .step h3{margin:10px 0 6px}
+  .step p{color:#78847a;font-size:14px;margin:0}
+  .quote{background:#f2eee3}
+  .quote-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px}
+  .quote h2{font-size:38px;letter-spacing:-.05em;line-height:1.25;margin:12px 0}
+  .quote-copy{color:#6c786e}
+  form{background:#fff;border-radius:18px;padding:30px;box-shadow:0 12px 35px #425a4810}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  label{display:block;font-size:13px;font-weight:700;color:#526558}
+  input,select,textarea{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid #dce4da;border-radius:7px;background:#fff;color:#24352d}
+  textarea{resize:vertical;min-height:90px}
+  .full{grid-column:1/-1}
+  .form-note{font-size:12px;color:#7a867c;margin:15px 0}
+  .form-btn{width:100%}
+  #result{display:none;margin-top:15px;padding:14px;background:#f0f6ee;border-radius:8px;white-space:pre-wrap;font-size:13px}
+  footer{background:#203e31;color:#c7d6cb;padding:40px 0;font-size:13px}
+  footer .logo{color:white;margin-bottom:10px}
+  footer p{margin:5px 0}
+  @media(max-width:760px){
+    .nav{height:65px}.logo{font-size:20px}nav a:not(.nav-cta){display:none}.nav-cta{padding:10px 14px;font-size:12px}
+    .hero-grid,.care-grid,.quote-grid{grid-template-columns:1fr;gap:35px}
+    .hero-grid{padding:55px 0}.scene{height:300px}.house{left:10%}.truck{right:15%}
+    .section{padding:65px 0}.cards{grid-template-columns:1fr}.card{min-height:0}.steps{grid-template-columns:1fr 1fr}
+    .section-head h2,.care h2,.quote h2{font-size:30px}
+  }
+  @media(max-width:420px){.fields{grid-template-columns:1fr}.full{grid-column:auto}.scene{height:260px}.truck{transform:scale(.8);transform-origin:bottom right}.house{transform:scale(.8);transform-origin:bottom left}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">이사<span>한걸음</span></a>
+    <nav aria-label="주 메뉴">
+      <a href="#services">서비스</a><a href="#care">이사한걸음의 마음</a><a href="#process">이용 안내</a>
+      <a class="nav-cta" href="#contact">견적 문의하기 ↗</a>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">A NEW BEGINNING, TOGETHER</div>
+        <h1>새로운 시작까지,<br><em>이사한걸음</em></h1>
+        <p>소중한 짐과 일상을 담아<br>새로운 보금자리로 함께 걸어갑니다.</p>
+        <div class="actions"><a class="btn" href="#contact">이사 견적 문의하기 ↗</a><a class="btn light" href="#services">서비스 살펴보기</a></div>
+      </div>
+      <div class="scene" role="img" aria-label="새 집으로 향하는 이사 트럭 일러스트">
+        <div class="sun"></div><div class="hill"></div>
+        <div class="house"><div class="window"></div><div class="door"></div></div>
+        <div class="truck"><div class="wheel one"></div><div class="wheel two"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">OUR SERVICES</div><h2>이사의 모든 순간을 함께</h2><p>이사 형태에 맞는 상담을 받아보세요.</p></div>
+      <div class="cards">
+        <article class="card"><div class="icon">🏠</div><h3>가정 이사</h3><p>가족의 생활이 담긴 가구와 짐을 새로운 공간으로 옮기는 이사입니다.</p></article>
+        <article class="card"><div class="icon">📦</div><h3>원룸 · 소형 이사</h3><p>혼자 사는 공간부터 작은 짐까지, 이사할 물품에 맞춰 상담해 드립니다.</p></article>
+        <article class="card"><div class="icon">🏢</div><h3>사무실 이사</h3><p>업무 공간과 집기를 옮길 계획이라면 일정과 필요한 내용을 함께 살펴봅니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section care" id="care">
+    <div class="wrap care-grid">
+      <div><div class="eyebrow" style="color:#b9d3bf">OUR PROMISE</div><h2>짐을 옮기는 일에<br>마음을 더합니다.</h2><p>이사는 물건을 옮기는 동시에 새로운 일상을 시작하는 일입니다. 이사한걸음은 상담부터 이사 준비까지 필요한 이야기를 차근차근 나누겠습니다.</p></div>
+      <div class="care-list">
+        <div class="care-item"><span class="num">01</span><div><strong>차근차근 상담</strong><small>이사 일정과 짐의 양을 함께 확인합니다.</small></div></div>
+        <div class="care-item"><span class="num">02</span><div><strong>소중한 물품 확인</strong><small>특별히 신경 써야 할 물품을 미리 알려주세요.</small></div></div>
+        <div class="care-item"><span class="num">03</span><div><strong>새로운 시작을 위한 준비</strong><small>출발지와 도착지의 조건을 꼼꼼히 살펴봅니다.</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">HOW IT WORKS</div><h2>이사는 이렇게 시작해요</h2><p>필요한 내용을 알려주시면 상담을 준비할 수 있습니다.</p></div>
+      <div class="steps">
+        <div class="step"><b>STEP 01</b><h3>문의 준비</h3><p>이사 종류와 희망 날짜를 정해 주세요.</p></div>
+        <div class="step"><b>STEP 02</b><h3>상담</h3><p>출발지, 도착지와 짐의 양을 확인합니다.</p></div>
+        <div class="step"><b>STEP 03</b><h3>견적 안내</h3><p>상담 내용을 바탕으로 조건을 안내합니다.</p></div>
+        <div class="step"><b>STEP 04</b><h3>이사 진행</h3><p>확정된 일정에 맞춰 이사를 준비합니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section quote" id="contact">
+    <div class="wrap quote-grid">
+      <div><div class="eyebrow">LET'S MOVE TOGETHER</div><h2>이사 계획,<br>편하게 말씀해 주세요.</h2><p class="quote-copy">언제, 어디로 이사하시는지 알려주시면 상담에 필요한 내용을 준비할 수 있습니다.</p><p class="quote-copy"><strong>연락처 · 운영 지역</strong><br>업체 정보가 정해지면 이곳에 표시됩니다.</p></div>
+      <form id="quoteForm">
+        <div class="fields">
+          <label>이사 종류<select id="type"><option>가정 이사</option><option>원룸 · 소형 이사</option><option>사무실 이사</option><option>기타</option></select></label>
+          <label>희망 이사일<input id="date" type="date"></label>
+          <label>출발 지역<input id="from" placeholder="예: 부산 해운대구"></label>
+          <label>도착 지역<input id="to" placeholder="예: 부산 수영구"></label>
+          <label class="full">추가 요청 사항<textarea id="details" placeholder="짐의 양이나 상담받고 싶은 내용을 적어주세요."></textarea></label>
+        </div>
+        <p class="form-note">현재 시안에서는 문의가 자동 접수되지 않습니다. 작성한 내용을 복사해 업체에 전달할 수 있습니다.</p>
+        <button class="btn form-btn" type="submit">문의 내용 만들기 →</button>
+        <div id="result" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><div class="logo">이사<span>한걸음</span></div><p>소중한 일상과 새로운 시작을 함께합니다.</p><p>업체 연락처 및 사업자 정보 입력 예정</p><p>© 이사한걸음</p></div></footer>
+<script>
+document.getElementById('quoteForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const v=id=>document.getElementById(id).value.trim()||'미정';
+  const text='[이사한걸음 견적 문의]\\n이사 종류: '+v('type')+'\\n희망 이사일: '+v('date')+'\\n출발 지역: '+v('from')+'\\n도착 지역: '+v('to')+'\\n추가 요청: '+v('details');
+  const box=document.getElementById('result');
+  box.style.display='block';
+  try{await navigator.clipboard.writeText(text);box.textContent='문의 내용을 복사했습니다. 업체 연락처가 준비되면 전달해 주세요.\\n\\n'+text;}
+  catch(err){box.textContent='아래 내용을 선택해 복사해 주세요.\\n\\n'+text;}
+});
+</script>
+</body>
+</html>
