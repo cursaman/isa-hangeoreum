@@ -3,81 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fbf6ec">
+<meta name="description" content="소중한 일상과 새로운 시작을 함께하는 이사한걸음. 가정 이사, 원룸·소형 이사, 사무실 이사 상담을 준비해 보세요.">
 <title>이사한걸음 | 새로운 시작을 함께</title>
 <style>
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;color:#24352d;background:#faf9f4;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.6}
-  a{color:inherit;text-decoration:none}
-  button,input,select,textarea{font:inherit}
-  .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
-  header{background:#faf9f4;position:sticky;top:0;z-index:5;border-bottom:1px solid #e7e9df}
-  .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-  .logo{font-size:23px;font-weight:900;letter-spacing:-1.5px}
-  .logo span{color:#e98d4b}
-  nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:700}
-  .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;background:#315c49;color:white;font-weight:700;padding:13px 22px;cursor:pointer}
-  .hero{background:#edf2e8;overflow:hidden}
-  .hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;padding:78px 0 85px}
-  .eyebrow{font-weight:800;letter-spacing:.12em;font-size:12px;color:#64836d}
-  h1{font-size:clamp(39px,5vw,65px);line-height:1.2;letter-spacing:-.065em;margin:18px 0 22px}
-  h1 em{font-style:normal;color:#d77d3b}
-  .hero p{font-size:17px;color:#617166;margin:0 0 29px;word-break:keep-all}
-  .actions{display:flex;gap:12px;flex-wrap:wrap}
-  .btn.light{background:white;color:#315c49;border:1px solid #cfdcd1}
-  .hero{position:relative;background:#f3eadb}
-  .hero-grid{position:relative;z-index:1;display:flex;align-items:center;min-height:610px;padding:85px 0}
-  .hero-copy{width:52%;max-width:570px}
-  .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-  .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,249,244,.95) 0%,rgba(250,249,244,.83) 32%,rgba(250,249,244,.12) 60%,transparent 76%)}
-  .section{padding:90px 0}
-  .section-head{text-align:center;margin-bottom:42px}
-  .section-head h2{font-size:36px;line-height:1.25;letter-spacing:-.05em;margin:12px 0}
-  .section-head p{margin:0;color:#78847a}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .card{background:#fff;border:1px solid #ebeee6;border-radius:16px;padding:32px;min-height:230px}
-  .icon{width:54px;height:54px;border-radius:16px;background:#eef4eb;display:grid;place-items:center;font-size:27px}
-  .card h3{margin:22px 0 8px;font-size:20px;letter-spacing:-.04em}
-  .card p{margin:0;color:#768278;font-size:15px;word-break:keep-all}
-  .care{background:#315c49;color:#fff}
-  .care-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}
-  .care h2{font-size:38px;line-height:1.3;letter-spacing:-.05em;margin:14px 0}
-  .care p{color:#cbdcd0;word-break:keep-all}
-  .care-list{display:grid;gap:12px}
-  .care-item{border:1px solid #668875;border-radius:12px;padding:18px 22px;display:flex;gap:18px;align-items:center}
-  .num{color:#f2c58c;font-weight:800;font-size:14px}
-  .care-item strong{display:block}.care-item small{color:#c5d8c9}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  .step{border-top:2px solid #b6cdb7;padding:20px 5px}
-  .step b{font-size:13px;color:#d07c40}
-  .step h3{margin:10px 0 6px}
-  .step p{color:#78847a;font-size:14px;margin:0}
-  .quote{background:#f2eee3}
-  .quote-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px}
-  .quote h2{font-size:38px;letter-spacing:-.05em;line-height:1.25;margin:12px 0}
-  .quote-copy{color:#6c786e}
-  form{background:#fff;border-radius:18px;padding:30px;box-shadow:0 12px 35px #425a4810}
-  .fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-  label{display:block;font-size:13px;font-weight:700;color:#526558}
-  input,select,textarea{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid #dce4da;border-radius:7px;background:#fff;color:#24352d}
-  textarea{resize:vertical;min-height:90px}
-  .full{grid-column:1/-1}
-  .form-note{font-size:12px;color:#7a867c;margin:15px 0}
-  .form-btn{width:100%}
-  #result{display:none;margin-top:15px;padding:14px;background:#f0f6ee;border-radius:8px;white-space:pre-wrap;font-size:13px}
-  footer{background:#203e31;color:#c7d6cb;padding:40px 0;font-size:13px}
-  footer .logo{color:white;margin-bottom:10px}
-  footer p{margin:5px 0}
-  @media(max-width:760px){
-    .nav{height:65px}.logo{font-size:20px}nav a:not(.nav-cta){display:none}.nav-cta{padding:10px 14px;font-size:12px}
-    .hero-grid,.care-grid,.quote-grid{grid-template-columns:1fr;gap:35px}
-    .hero-grid{padding:48px 0 35px;min-height:0}.hero-copy{width:100%;max-width:none}
-    .hero-photo{position:relative;display:block;height:300px;object-position:72% center;object-fit:cover}
-    .hero{display:flex;flex-direction:column}.hero-grid{order:-1}.hero:after{display:none}
-    .section{padding:65px 0}.cards{grid-template-columns:1fr}.card{min-height:0}.steps{grid-template-columns:1fr 1fr}
-    .section-head h2,.care h2,.quote h2{font-size:30px}
-  }
-  @media(max-width:420px){.fields{grid-template-columns:1fr}.full{grid-column:auto}.hero-photo{height:250px}}
+:root{--ink:#3d3028;--muted:#776657;--cream:#fbf6ec;--paper:#fffdf8;--rust:#a94f30;--olive:#555e3d;--line:#e3d6c3}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;color:var(--ink);background:var(--cream);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.7;word-break:keep-all}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:3px solid var(--rust);outline-offset:5px}.wrap{width:min(1160px,calc(100% - 64px));margin:auto}header{position:sticky;top:0;z-index:10;background:rgba(251,246,236,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{font-size:25px;font-weight:900;letter-spacing:-1.6px;color:var(--olive)}.logo span{color:var(--rust)}nav{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:700}nav>a:not(.nav-cta):hover{color:var(--rust)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;border:1px solid transparent;border-radius:5px;background:var(--rust);color:#fffdf8;font-weight:700;padding:14px 24px;cursor:pointer;transition:background .2s,transform .2s}.btn:hover,.nav-cta:hover{background:#873d25;transform:translateY(-2px)}.nav-cta{font-size:13px;padding:11px 18px}.btn.light{background:rgba(255,253,248,.8);color:var(--ink);border-color:#bba88f}.btn.light:hover{background:#fffdf8}
+.hero{position:relative;overflow:hidden;background:#efe1cb}.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:sepia(.13) saturate(.92)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,246,236,.98),rgba(251,246,236,.88) 28%,rgba(251,246,236,.12) 61%,transparent 85%)}.hero-grid{position:relative;z-index:1;display:flex;align-items:center;min-height:660px;padding:88px 0}.hero-copy{width:52%;max-width:580px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.19em;color:var(--rust)}.season-tag{display:inline-flex;align-items:center;gap:9px;padding:6px 12px;border:1px solid #d8bfa0;border-radius:30px;color:#85502e;background:#fbf3e4cc;font-size:12px;margin-bottom:25px}.leaf-mark{display:inline-block;width:13px;height:18px;border-radius:90% 0 90% 0;background:#b36538;transform:rotate(24deg)}h1{font-size:clamp(42px,4.8vw,68px);line-height:1.22;letter-spacing:-.065em;margin:18px 0 25px;font-weight:800}h1 em{font-style:normal;color:var(--rust)}.hero p{font-size:17px;color:#675649;margin:0 0 31px}.actions{display:flex;gap:12px;flex-wrap:wrap}.hero-caption{margin-top:38px;padding-top:18px;border-top:1px solid #cdb99c;display:flex;align-items:center;gap:12px;font-size:12px;color:#725f4b;max-width:350px}.hero-caption span:first-child{font-family:Georgia,serif;font-style:italic;color:var(--rust);font-size:18px}
+.season-strip{background:var(--olive);color:#f6eddc}.strip-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font-size:13px}.strip-inner strong{font-size:15px;font-weight:600}.strip-inner span{color:#e2dcc5}.section{padding:100px 0}.section-head{text-align:center;margin-bottom:46px}.section-head h2,.care h2,.quote h2{font-size:clamp(30px,3vw,42px);line-height:1.35;letter-spacing:-.055em;margin:12px 0 16px}.section-head p{color:var(--muted);font-size:15px;margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:34px 30px 30px;overflow:hidden;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-5px);box-shadow:0 14px 30px #70533112}.card:before{content:"";position:absolute;inset:0 0 auto;height:4px;background:#b9633d}.card:nth-child(2):before{background:#b99a51}.card:nth-child(3):before{background:var(--olive)}.card-number{position:absolute;top:23px;right:26px;font:italic 34px Georgia,serif;color:#e2d5bf}.icon{width:57px;height:57px;border:1px solid #e5d3ba;background:#f5ead9;border-radius:50%;display:grid;place-items:center;color:#925235}.icon svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.card h3{font-size:22px;letter-spacing:-.04em;margin:27px 0 12px}.card p{font-size:14px;color:var(--muted);margin:0;min-height:72px}.card-link{display:flex;justify-content:space-between;margin-top:27px;padding-top:17px;border-top:1px solid var(--line);font-size:13px;font-weight:700;color:var(--rust)}.card-link:hover{text-decoration:underline}
+.care{position:relative;overflow:hidden;background:#594337;color:#fff6e7}.care:after{content:"";position:absolute;right:-55px;top:-80px;width:260px;height:380px;border:1px solid #d8b78c26;border-radius:100% 0 100% 0;transform:rotate(30deg);pointer-events:none}.care-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.1fr;gap:85px;align-items:center}.care .eyebrow{color:#e4ba87}.care p{color:#e0ceba;font-size:15px;max-width:430px}.care-signature{margin-top:28px;font:italic 24px Georgia,serif;color:#dcac7d}.care-list{display:grid;gap:0}.care-item{padding:24px 0;border-bottom:1px solid #987d644d;display:flex;gap:24px;align-items:flex-start}.care-item:first-child{border-top:1px solid #987d644d}.num{font:italic 25px Georgia,serif;color:#e4ba87}.care-item strong{display:block;font-size:18px;margin-bottom:5px}.care-item small{color:#ddc9b3;font-size:13px}
+#process{background:#f3ebdc}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step}.step{position:relative;padding:25px 20px 10px 0;border-top:1px solid #b99d77}.step b{display:inline-block;font:italic 26px Georgia,serif;color:var(--rust)}.step h3{font-size:19px;letter-spacing:-.03em;margin:17px 0 10px}.step p{font-size:14px;color:var(--muted);margin:0}.step:not(:last-child):after{content:"↗";position:absolute;top:23px;right:4px;color:#9c8769;font-size:22px}
+.quote{background:var(--cream)}.quote-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:85px;align-items:start}.quote-copy{font-size:15px;color:var(--muted);max-width:350px}.contact-info{margin-top:32px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}.contact-info strong{color:var(--ink)}.quote-accent{width:65px;height:90px;background:#c18b4e;border-radius:100% 0 100% 0;transform:rotate(25deg);opacity:.65;margin:35px 0 0 22px}
+form{padding:34px;background:var(--paper);border:1px solid var(--line);border-radius:9px;box-shadow:0 18px 45px #6d50370a}.form-heading{font-size:19px;font-weight:800;margin:0 0 24px;padding-bottom:18px;border-bottom:1px solid var(--line)}.fields{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px}label{display:block;font-size:13px;font-weight:700;color:#64513f}input,select,textarea{display:block;width:100%;min-width:0;margin-top:7px;padding:12px;border:1px solid #dccdb8;border-radius:4px;background:#fffdf9;color:var(--ink)}input:focus,select:focus,textarea:focus{outline:2px solid #ac6c41;outline-offset:2px}input::placeholder,textarea::placeholder{color:#827566}textarea{resize:vertical;min-height:105px}.full{grid-column:1/-1}.form-note{font-size:12px;color:#75634f;margin:20px 0;line-height:1.8}.form-btn{width:100%}#result{display:none;margin-top:16px;padding:16px;background:#f3ebdc;border:1px solid var(--line);border-radius:5px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}
+footer{background:#302b24;color:#d4c5b1;padding:48px 0;font-size:12px}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}footer .logo{color:#f8eddc;margin-bottom:12px}footer .logo span{color:#d79b66}footer p{margin:6px 0}.footer-note{text-align:right;color:#c7b59d}.footer-note em{display:block;font:italic 22px Georgia,serif;color:#d8b88c;margin-bottom:12px}
+@media(min-width:761px) and (max-width:1000px){nav{gap:16px}.hero-copy{width:58%}.hero:after{background:linear-gradient(90deg,#fbf6ecf5,#fbf6ecbf 38%,transparent 78%)}.care-grid,.quote-grid{gap:38px}.card{padding:28px 22px}.wrap{width:calc(100% - 48px)}}
+@media(max-width:760px){.wrap{width:calc(100% - 40px)}.nav{height:auto;min-height:72px;flex-wrap:wrap;gap:0;padding:14px 0 10px}.logo{font-size:22px}nav{gap:18px;width:100%;flex-wrap:wrap;font-size:12px;margin-top:10px}nav .nav-cta{position:absolute;top:14px;right:20px;font-size:11px;padding:8px 12px}html{scroll-padding-top:125px}.hero{display:flex;flex-direction:column}.hero-grid{order:-1;padding:44px 0 34px;min-height:0}.hero-copy{width:100%;max-width:none}.season-tag{margin-bottom:12px}.hero-photo{position:relative;height:300px;object-fit:cover;object-position:78% center}.hero:after{display:none}h1{font-size:46px;margin-top:14px}.hero p{font-size:15px}.hero-caption{margin-top:26px}.actions .btn{padding:12px 17px;font-size:13px}.strip-inner{align-items:flex-start;flex-direction:column;gap:4px;padding:18px 0;font-size:12px}.strip-inner strong{font-size:14px}.section{padding:65px 0}.section-head{margin-bottom:30px;text-align:left}.cards,.care-grid,.quote-grid{grid-template-columns:1fr;gap:20px}.card{padding:28px}.card p{min-height:0}.care-grid{gap:28px}.care-item{padding:22px 0}.steps{grid-template-columns:1fr 1fr;gap:25px 20px}.step{padding-right:9px}.step h3{font-size:18px}.step p{font-size:13px}.step:nth-child(2):after{display:none}.quote-grid{gap:30px}.quote-accent{display:none}.contact-info{margin-top:22px}form{padding:25px 20px}.footer-grid{flex-direction:column;gap:24px}.footer-note{text-align:left}}
+@media(max-width:380px){h1{font-size:40px}.fields{grid-template-columns:1fr}.full{grid-column:auto}.hero-photo{height:250px}.actions{gap:8px}.actions .btn{padding:12px 13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
 <body>
@@ -95,28 +37,31 @@
     <img class="hero-photo" src="assets/moving-hero-v2.jpg" alt="밝은 새집으로 이삿짐을 조심스럽게 옮기는 작업자들의 실사형 이미지" width="1672" height="941" fetchpriority="high">
     <div class="wrap hero-grid">
       <div class="hero-copy">
+        <div class="season-tag"><span class="leaf-mark" aria-hidden="true"></span> 가을빛을 담은, 새로운 시작</div>
         <div class="eyebrow">A NEW BEGINNING, TOGETHER</div>
         <h1>새로운 시작까지,<br><em>이사한걸음</em></h1>
-        <p>소중한 짐과 일상을 담아<br>새로운 보금자리로 함께 걸어갑니다.</p>
+        <p>가을 햇살처럼 따뜻하게, 소중한 일상을 담아<br>새로운 보금자리로 함께 걸어갑니다.</p>
         <div class="actions"><a class="btn" href="#contact">이사 견적 문의하기 ↗</a><a class="btn light" href="#services">서비스 살펴보기</a></div>
+        <div class="hero-caption"><span>Moving with care.</span><span>계절이 바뀌어도, 한결같은 정성</span></div>
       </div>
     </div>
   </section>
 
+  <div class="season-strip"><div class="wrap strip-inner"><strong>새로운 계절, 새로운 집. 그 사이에 이사한걸음.</strong><span>가정 이사 · 원룸 / 소형 이사 · 사무실 이사</span></div></div>
   <section class="section" id="services">
     <div class="wrap">
       <div class="section-head"><div class="eyebrow">OUR SERVICES</div><h2>이사의 모든 순간을 함께</h2><p>이사 형태에 맞는 상담을 받아보세요.</p></div>
       <div class="cards">
-        <article class="card"><div class="icon">🏠</div><h3>가정 이사</h3><p>가족의 생활이 담긴 가구와 짐을 새로운 공간으로 옮기는 이사입니다.</p></article>
-        <article class="card"><div class="icon">📦</div><h3>원룸 · 소형 이사</h3><p>혼자 사는 공간부터 작은 짐까지, 이사할 물품에 맞춰 상담해 드립니다.</p></article>
-        <article class="card"><div class="icon">🏢</div><h3>사무실 이사</h3><p>업무 공간과 집기를 옮길 계획이라면 일정과 필요한 내용을 함께 살펴봅니다.</p></article>
+        <article class="card"><span class="card-number" aria-hidden="true">01</span><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11 12 3l9 8M5 10v11h14V10M9 21v-8h6v8"/></svg></div><h3>가정 이사</h3><p>가족의 생활이 담긴 가구와 짐을 새로운 공간으로 옮기는 이사입니다.</p><a class="card-link" href="#contact">이사 상담 준비하기 <span aria-hidden="true">↗</span></a></article>
+        <article class="card"><span class="card-number" aria-hidden="true">02</span><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 7 9-4 9 4v11l-9 4-9-4V7Zm0 0 9 5 9-5M12 12v10M7 5l10 5"/></svg></div><h3>원룸 · 소형 이사</h3><p>혼자 사는 공간부터 작은 짐까지, 이사할 물품에 맞춰 상담해 드립니다.</p><a class="card-link" href="#contact">이사 상담 준비하기 <span aria-hidden="true">↗</span></a></article>
+        <article class="card"><span class="card-number" aria-hidden="true">03</span><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 21V3h14v18M3 21h18M9 7h1m4 0h1M9 11h1m4 0h1M10 21v-6h4v6"/></svg></div><h3>사무실 이사</h3><p>업무 공간과 집기를 옮길 계획이라면 일정과 필요한 내용을 함께 살펴봅니다.</p><a class="card-link" href="#contact">이사 상담 준비하기 <span aria-hidden="true">↗</span></a></article>
       </div>
     </div>
   </section>
 
   <section class="section care" id="care">
     <div class="wrap care-grid">
-      <div><div class="eyebrow" style="color:#b9d3bf">OUR PROMISE</div><h2>짐을 옮기는 일에<br>마음을 더합니다.</h2><p>이사는 물건을 옮기는 동시에 새로운 일상을 시작하는 일입니다. 이사한걸음은 상담부터 이사 준비까지 필요한 이야기를 차근차근 나누겠습니다.</p></div>
+      <div><div class="eyebrow" >OUR PROMISE</div><h2>짐을 옮기는 일에<br>마음을 더합니다.</h2><p>이사는 물건을 옮기는 동시에 새로운 일상을 시작하는 일입니다. 이사한걸음은 상담부터 이사 준비까지 필요한 이야기를 차근차근 나누겠습니다.</p><div class="care-signature">A little care, a new beginning.</div></div>
       <div class="care-list">
         <div class="care-item"><span class="num">01</span><div><strong>차근차근 상담</strong><small>이사 일정과 짐의 양을 함께 확인합니다.</small></div></div>
         <div class="care-item"><span class="num">02</span><div><strong>소중한 물품 확인</strong><small>특별히 신경 써야 할 물품을 미리 알려주세요.</small></div></div>
@@ -139,8 +84,9 @@
 
   <section class="section quote" id="contact">
     <div class="wrap quote-grid">
-      <div><div class="eyebrow">LET'S MOVE TOGETHER</div><h2>이사 계획,<br>편하게 말씀해 주세요.</h2><p class="quote-copy">언제, 어디로 이사하시는지 알려주시면 상담에 필요한 내용을 준비할 수 있습니다.</p><p class="quote-copy"><strong>연락처 · 운영 지역</strong><br>업체 정보가 정해지면 이곳에 표시됩니다.</p></div>
+      <div><div class="eyebrow">LET'S MOVE TOGETHER</div><h2>이사 계획,<br>편하게 말씀해 주세요.</h2><p class="quote-copy">언제, 어디로 이사하시는지 알려주시면 상담에 필요한 내용을 준비할 수 있습니다.</p><div class="contact-info"><strong>연락처 · 운영 지역</strong><br>업체 정보가 정해지면 이곳에 표시됩니다.</div><div class="quote-accent" aria-hidden="true"></div></div>
       <form id="quoteForm">
+        <p class="form-heading">나의 이사 계획 남기기</p>
         <div class="fields">
           <label>이사 종류<select id="type"><option>가정 이사</option><option>원룸 · 소형 이사</option><option>사무실 이사</option><option>기타</option></select></label>
           <label>희망 이사일<input id="date" type="date"></label>
@@ -155,16 +101,16 @@
     </div>
   </section>
 </main>
-<footer><div class="wrap"><div class="logo">이사<span>한걸음</span></div><p>소중한 일상과 새로운 시작을 함께합니다.</p><p>업체 연락처 및 사업자 정보 입력 예정</p><p>© 이사한걸음</p></div></footer>
+<footer><div class="wrap footer-grid"><div><div class="logo">이사<span>한걸음</span></div><p>소중한 일상과 새로운 시작을 함께합니다.</p><p>업체 연락처 및 사업자 정보 입력 예정</p></div><div class="footer-note"><em>Every move, a warm beginning.</em><p>© 이사한걸음. All rights reserved.</p></div></div></footer>
 <script>
 document.getElementById('quoteForm').addEventListener('submit', async function(e){
   e.preventDefault();
   const v=id=>document.getElementById(id).value.trim()||'미정';
-  const text='[이사한걸음 견적 문의]\\n이사 종류: '+v('type')+'\\n희망 이사일: '+v('date')+'\\n출발 지역: '+v('from')+'\\n도착 지역: '+v('to')+'\\n추가 요청: '+v('details');
+  const text='[이사한걸음 견적 문의]\n이사 종류: '+v('type')+'\n희망 이사일: '+v('date')+'\n출발 지역: '+v('from')+'\n도착 지역: '+v('to')+'\n추가 요청: '+v('details');
   const box=document.getElementById('result');
   box.style.display='block';
-  try{await navigator.clipboard.writeText(text);box.textContent='문의 내용을 복사했습니다. 업체 연락처가 준비되면 전달해 주세요.\\n\\n'+text;}
-  catch(err){box.textContent='아래 내용을 선택해 복사해 주세요.\\n\\n'+text;}
+  try{await navigator.clipboard.writeText(text);box.textContent='문의 내용을 복사했습니다. 업체 연락처가 준비되면 전달해 주세요.\n\n'+text;}
+  catch(err){box.textContent='아래 내용을 선택해 복사해 주세요.\n\n'+text;}
 });
 </script>
 </body>
