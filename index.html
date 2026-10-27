@@ -25,18 +25,11 @@
   .hero p{font-size:17px;color:#617166;margin:0 0 29px;word-break:keep-all}
   .actions{display:flex;gap:12px;flex-wrap:wrap}
   .btn.light{background:white;color:#315c49;border:1px solid #cfdcd1}
-  .scene{height:390px;border-radius:180px 180px 22px 22px;background:#d4e2d0;position:relative;overflow:hidden}
-  .sun{position:absolute;width:85px;height:85px;border-radius:50%;background:#f8d99b;top:50px;right:75px}
-  .hill{position:absolute;bottom:-65px;left:-10%;width:120%;height:180px;border-radius:50%;background:#b4cbb0}
-  .house{position:absolute;bottom:72px;left:13%;width:135px;height:125px;background:#fcf8e9;border-radius:3px}
-  .house:before{content:"";position:absolute;top:-54px;left:-14px;border-left:82px solid transparent;border-right:82px solid transparent;border-bottom:58px solid #d79066}
-  .door{position:absolute;bottom:0;left:49px;width:34px;height:59px;background:#a5bba0;border-radius:18px 18px 0 0}
-  .window{position:absolute;top:30px;left:16px;width:30px;height:30px;background:#d4e7e1;border:4px solid white}
-  .truck{position:absolute;bottom:70px;right:11%;width:190px;height:92px;background:#f9f6e9;border-radius:6px 8px 8px 6px;box-shadow:0 7px 0 #8aa88a}
-  .truck:before{content:"";position:absolute;right:-42px;bottom:0;width:50px;height:65px;background:#f0b775;border-radius:20px 8px 4px 0}
-  .truck:after{content:"이사한걸음";position:absolute;top:27px;left:20px;color:#477258;font-size:18px;font-weight:900;letter-spacing:-1px}
-  .wheel{position:absolute;bottom:-15px;width:32px;height:32px;border:7px solid #435b50;background:#f2f0e3;border-radius:50%}
-  .wheel.one{left:25px}.wheel.two{right:-25px}
+  .hero{position:relative;background:#f3eadb}
+  .hero-grid{position:relative;z-index:1;display:flex;align-items:center;min-height:610px;padding:85px 0}
+  .hero-copy{width:52%;max-width:570px}
+  .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,249,244,.95) 0%,rgba(250,249,244,.83) 32%,rgba(250,249,244,.12) 60%,transparent 76%)}
   .section{padding:90px 0}
   .section-head{text-align:center;margin-bottom:42px}
   .section-head h2{font-size:36px;line-height:1.25;letter-spacing:-.05em;margin:12px 0}
@@ -78,11 +71,13 @@
   @media(max-width:760px){
     .nav{height:65px}.logo{font-size:20px}nav a:not(.nav-cta){display:none}.nav-cta{padding:10px 14px;font-size:12px}
     .hero-grid,.care-grid,.quote-grid{grid-template-columns:1fr;gap:35px}
-    .hero-grid{padding:55px 0}.scene{height:300px}.house{left:10%}.truck{right:15%}
+    .hero-grid{padding:48px 0 35px;min-height:0}.hero-copy{width:100%;max-width:none}
+    .hero-photo{position:relative;display:block;height:300px;object-position:72% center;object-fit:cover}
+    .hero{display:flex;flex-direction:column}.hero-grid{order:-1}.hero:after{display:none}
     .section{padding:65px 0}.cards{grid-template-columns:1fr}.card{min-height:0}.steps{grid-template-columns:1fr 1fr}
     .section-head h2,.care h2,.quote h2{font-size:30px}
   }
-  @media(max-width:420px){.fields{grid-template-columns:1fr}.full{grid-column:auto}.scene{height:260px}.truck{transform:scale(.8);transform-origin:bottom right}.house{transform:scale(.8);transform-origin:bottom left}}
+  @media(max-width:420px){.fields{grid-template-columns:1fr}.full{grid-column:auto}.hero-photo{height:250px}}
 </style>
 </head>
 <body>
@@ -97,17 +92,13 @@
 </header>
 <main id="top">
   <section class="hero">
+    <img class="hero-photo" src="assets/moving-hero.jpg" alt="밝은 새집으로 이삿짐을 조심스럽게 옮기는 작업자들의 실사형 이미지" width="1672" height="941" fetchpriority="high">
     <div class="wrap hero-grid">
-      <div>
+      <div class="hero-copy">
         <div class="eyebrow">A NEW BEGINNING, TOGETHER</div>
         <h1>새로운 시작까지,<br><em>이사한걸음</em></h1>
         <p>소중한 짐과 일상을 담아<br>새로운 보금자리로 함께 걸어갑니다.</p>
         <div class="actions"><a class="btn" href="#contact">이사 견적 문의하기 ↗</a><a class="btn light" href="#services">서비스 살펴보기</a></div>
-      </div>
-      <div class="scene" role="img" aria-label="새 집으로 향하는 이사 트럭 일러스트">
-        <div class="sun"></div><div class="hill"></div>
-        <div class="house"><div class="window"></div><div class="door"></div></div>
-        <div class="truck"><div class="wheel one"></div><div class="wheel two"></div></div>
       </div>
     </div>
   </section>
